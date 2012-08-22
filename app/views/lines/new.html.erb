@@ -1,0 +1,17 @@
+<h5><font color=salmon size=69 face="Arial">Put your new Choo-Choo here:</font><h5>
+  
+<!-- Q: Why can't I just grey out the form_tag do and end lines below? And what is the http address doing there?-->
+
+<%= form_tag('http://localhost:3000/lines') do %>
+
+  <%= label_tag :name, 'The name of this train line is:' %>
+  <%= text_field_tag :name %>
+  
+  <%= label_tag :frequency, 'The frequency of the train line is:' %>
+  <%= text_field_tag :frequency %>
+  
+  <%= submit_tag 'Create Line' %>
+
+<% end %>
+
+<a href="http://localhost:3000/lines">Back to List of All Lines</a>
