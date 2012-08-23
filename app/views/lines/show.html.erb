@@ -2,4 +2,7 @@
 
 <p>The <%= @line.name %> line runs every <%= @line.frequency %> minutes!</p>
 
-<a href="http://localost:3000/lines">Back to List of All Lines</a>
+<%= link_to "Back to List of All Lines", train_lines_url %>
+
+<%= link_to "Edit This Line", edit_train_line_url(@line.id) %>
+<!-- WHY not	edit_train_line_url(line_id)	? -->

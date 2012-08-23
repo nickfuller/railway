@@ -2,8 +2,16 @@
 
 <ul>
   <% @lines.each do |line| %>
-    <li><font color=teal size=12 face="Verdana"><a href="http://localhost:3000/lines/<%= line.id %>"><%= line.name %></a></font></li>
+    <li>
+    	<font color=teal size=12 face="Verdana">
+    		
+    		<%= link_to line.name, train_line_url(line.id) %>
+
+    		<%= link_to "Delete", train_line_url(line.id), :method => :delete %>
+
+    	</font>
+    </li>
   <% end %>
 </ul>
 
-<a href="http://localhost:3000/lines/new">Add a New Choo Choo</a>
+<%= link_to "Add a New Choo Choo", "http://localhost:3000/lines/new" %>
