@@ -1,10 +1,10 @@
 <%= form_for @line do |f| %>
-	<%= f.label :name, 'The name of the train line is:' %>
+	<p><%= f.label :name, 'The name of the train line is:' %>
 	<!-- WHAT is ":name" doing in the line above? -->
-	<%= f.text_field :name %>
-	<%= f.label :frequency, 'The frequency of the train line is:' %>
-	<%= f.text_field :frequency %>
-	<%= f.submit %>'Create Line' %>
+	<%= f.text_field :name %></p>
+	<p><%= f.label :frequency, 'The frequency of the train line is:' %>
+	<%= f.text_field :frequency %></p>
+	<p><%= f.submit 'Create Line' %></p>
 		
 	<!-- WAS
 
@@ -14,21 +14,4 @@
 	-->
 	
 <% end %>
-
-<!-- 
-<%= form_tag(train_line_url(@line.id), #:method => :put) do %>
-  
-  <%= label_tag #:name, 'The name of the train line is:' %>
-  <%= text_field_tag #:name, @line.name %>
-  
-  <%= label_tag #:frequency, 'The frequency of the train line is:' %>
-  <%= text_field_tag #:frequency, @line.frequency %>
-  
-  <%= submit_tag #'Update Line' %>
-  
-<% #end %>
-
-I don't really understand the advantage of the form_for over form tags
--->
-
 

@@ -2,11 +2,11 @@ Railway::Application.routes.draw do
   
   root :to => 'Lines#index'
 
-  get '/lines' => 'Lines#index', # WHY not :as=>'train_lines'?
+  get '/lines' => 'Lines#index' # WHY not :as=>'train_lines'?
   # BUT, would      root :to => 'Lines#index', :as => 'train_lines'           work just as well?
   
   get '/lines/new' => 'Lines#new', :as =>'new_train_line'
-  post '/lines' => 'Lines#create', :as => train_lines
+  post '/lines' => 'Lines#create', :as => 'train_lines'
   
   get '/lines/:id' => 'Lines#show'
   # WHY not         get 'lines/:name' => 'Lines#show'                   instead?
