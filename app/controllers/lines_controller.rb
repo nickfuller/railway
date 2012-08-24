@@ -20,20 +20,16 @@ class LinesController < ApplicationController
       redirect_to train_line_url(@line), :notice => "Successfully saved"
     else
       flash[:notice] = "Somtheing wEtN WoRONg!"
-      render 'new'
-      # HOW are we rendering 'new' and what is 'new'?
+      render 'new' # HOW are we rendering 'new' and what is 'new'?
     end
   end
 
   def show
-    @line = TrainLine.find_by_id(params[:id])
-    # WHERE is this prams[:id] coming from exactly?
-
+    @line = TrainLine.find_by_id(params[:id])  # WHERE is this prams[:id] coming from exactly?
     respond_to do |format|
       format.html
       format.json { render :json => @line }
     end
-    # IS THIS adding support for JSON responses, if so, hoW?
   end
   
   def edit
@@ -44,8 +40,6 @@ class LinesController < ApplicationController
     @line = TrainLine.find_by_id(params[:id])
 
     if @line.update_attributes(params[:train_line])
-    # WHY can we call :train_line in the params hash? The 
-    # TrainLine model only has :name and :frequency...
       redirect_to train_line_url(@line.id)
     else
       flash[:notice] = "Something went wrong."
@@ -66,6 +60,3 @@ class LinesController < ApplicationController
   end
 
 end
-
-# Just to be clear, the @line in the index action is not at all related to the @line in the create - or 
-# any other action, right?
